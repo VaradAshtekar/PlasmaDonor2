@@ -4,7 +4,6 @@ from donation import views
 from django.views.generic import TemplateView
 app_name = "donation"
 
-from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
