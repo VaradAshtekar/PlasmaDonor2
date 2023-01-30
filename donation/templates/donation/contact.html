@@ -1,0 +1,38 @@
+{% extends 'donation/base.html' %}
+{% block titles %}
+  Contact Us
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+   <h2 class="mx-auto mx-3 my-3">
+        Tell us your queries
+</h2>
+    <form action="/donation/contact" method="POST">
+     {% csrf_token %}
+      <div class="form-group">
+          <label for="exampleFormControlInput1">Name</label>
+          <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Phone</label>
+            <input type="phone" name="phone" class="form-control" id="exampleFormControlInput3" placeholder="Phone no.">
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">How may we help you?</label>
+          <textarea class="form-control" name = "desc" placeholder="What's Ur query" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Submit</button>
+
+      </form>
+</div>
+
+{% endblock %}

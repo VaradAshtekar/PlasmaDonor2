@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>{% block titles %} {% endblock %}</title>
+    <style>
+    {% block css %}
+    {% endblock %}
+    .btn{
+    border-radius: 0px;
+    }
+#faqs{
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5% ;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  line-height: 70px ;
+  color: #333333;
+}
+.sections img{
+padding-top: 0px;
+}
+#category{
+padding: 2%;
+text-align: center;
+  font-family: 'Rotunda_Bold', sans-serif;
+  font-size: 40px;
+  line-height: 50px ;
+  color: #333333;
+}
+
+.sections {
+display: block;
+margin: 1% 10% 1% 10%;
+border-bottom: 1px solid rgb(201, 201, 201);
+position: relative;
+justify-content: center;
+text-align: center;
+font-family: 'Rotunda_Light', sans-serif;
+font-weight: 600;
+color: #333333;
+font-size: 26px;
+line-height: 36px;
+}
+
+.sections .question p{
+padding: 2% 20% 2% 20%;
+display: block;
+text-align: center;
+cursor: pointer;
+}
+
+.sections .answer {
+transition: 1s linear;
+justify-content: center;
+text-align: center;
+font-family: 'Rotunda_Light', sans-serif;
+font-weight: 400;
+color: #333333;
+font-size: 20px;
+line-height: 26px;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.2s ease-out;
+
+}
+.answer p{
+  padding:0%  20%  2%  20%; ;
+}
+
+
+.social-media{
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding: 2%;
+}
+.social-media a{
+  padding: 20px;
+}
+.cat{
+  padding-top: 70px!important;
+}
+footer{
+    background-color: #FF3030;
+    color: #DFDFDF;
+}
+footer a{
+    color: #DFDFDF!important;
+}
+.footer-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #191919;
+
+}
+
+
+.footer-links{
+    display: flex;
+    padding-top: 60px;
+    overflow: hidden;
+
+}
+.explore-links,.about-links,.contact-links{
+    display: flex;
+    flex-direction: column;
+
+    padding: 50px;
+    padding-bottom: 0;
+}
+.footer-links a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+.footer-links h3{
+    font-size: 18px;
+    font-family: "Montserrat",Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.links{
+
+    width: 50%;
+
+}
+.icons{
+    width: 25%;
+}
+.links ul{
+    display: flex;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 18%;
+
+
+}
+.links ul{
+    list-style: none;
+
+}
+.links ul li{
+    padding-right: 30px;
+}
+.links ul a{
+    text-decoration: none;
+    color: white;
+}
+.final-down{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    background-color: #191919;
+}
+
+.donorinfo{
+
+  display: flex;
+  flex-direction: row;
+}
+
+.card{
+
+margin: 20px;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/donation/">PlasmaDonor.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/donation/"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/donation/location">Plasma Donations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/donation/faq">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/donation/contact">Contact Us</a>
+        </li>
+
+
+      </ul>
+        <a href="/donation/login" type="button" class="btn btn-danger mx-2">Sign In</a>
+        <a href="/donation/register" type="button" class="btn btn-danger mx-2" ><i class="fa fa-user" aria-hidden="true"></i></a>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    {% block body %} {% endblock %}
+
+    <div class="container donorinfo">
+
+      <div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">My Profile</h5>
+
+    <p class="card-text">Register yourself to get the updates from us</p>
+    <a href="/donation/register" class="btn btn-danger">Register</a>
+  </div>
+</div>
+
+       <div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Donations</h5>
+    <p class="card-text">Donate your blood & Save Lives</p>
+
+    <a href="#" class="btn btn-danger">Donate Now !</a>
+  </div>
+</div>
+
+       <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Nearest Blood Banks</h5>
+
+    <p class="card-text"> Register yourself  into Blood Banks at your city</p>
+    <a href="/donation/location" class="btn btn-danger">Get Location</a>
+  </div>
+</div>
+
+       <div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Eligility Criteria</h5>
+
+    <p class="card-text">Check eligibility Criteria to donate According to your blood group</p>
+    <a href="/donation/compatability" class="btn btn-danger">Check Out!</a>
+  </div>
+</div>
+    </div>
+
+        <footer>
+        <div class="footer-wrapper">
+            <div class="footer-links">
+                <div class="explore-links">
+                    <h3>Explore</h3><br />
+                  <a href="">Main Event</a>
+                  <a href="">Countdown</a>
+                  <a href="#">Partners</a>
+                </div>
+                <div class="about-links">
+                    <h3>About</h3><br />
+                </div>
+                <div class="contact-links">
+                    <h3>Contact</h3><br /><a href=""></a>
+                  <a href=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="final-down">
+            <div class="links">
+                <ul>
+
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="icons"><svg width="220" height="45" viewBox="0 0 167 15" fill="none"
+                    xmlns="http://www.w3.org/2000/svg"><a xlink:href="https://www.youtube.com/c/TEDxVITPune">
+                        <path
+                            d="M158.133 9.14379C159.259 8.56021 160.374 7.982 161.5 7.39811C160.371 6.80885 159.256 6.22727 158.133 5.64154C158.133 6.813 158.133 7.97249 158.133 9.14379Z"
+                            fill="white" />
+                        <path
+                            d="M159.5 0C155.358 0 152 3.35785 152 7.5C152 11.6421 155.358 15 159.5 15C163.642 15 167 11.6421 167 7.5C167 3.35785 163.642 0 159.5 0ZM164.61 10.0034C164.48 10.5666 164.02 10.982 163.465 11.0438C162.152 11.1907 160.823 11.1915 159.5 11.1907C158.176 11.1915 156.847 11.1907 155.534 11.0438C154.979 10.982 154.519 10.5666 154.389 10.0034C154.205 9.20118 154.205 8.32573 154.205 7.5C154.205 6.67427 154.207 5.79852 154.391 4.99657C154.521 4.4334 154.981 4.01785 155.536 3.95586C156.849 3.80916 158.178 3.80839 159.502 3.80916C160.825 3.80839 162.154 3.80916 163.467 3.95586C164.022 4.01785 164.483 4.43325 164.612 4.99657C164.797 5.79867 164.795 6.67427 164.795 7.5C164.795 8.32573 164.795 9.20133 164.61 10.0034Z"
+                            fill="white" /></a><a xlink:href="https://www.linkedin.com/company/tedxvitpune/">
+                        <path
+                            d="M121.5 0C117.358 0 114 3.3585 114 7.5C114 11.6415 117.358 15 121.5 15C125.642 15 129 11.6415 129 7.5C129 3.3585 125.642 0 121.5 0ZM119.321 11.3379H117.494V5.84255H119.321V11.3379ZM118.407 5.09216H118.395C117.783 5.09216 117.386 4.67022 117.386 4.14288C117.386 3.60363 117.795 3.19336 118.419 3.19336C119.044 3.19336 119.429 3.60363 119.441 4.14288C119.441 4.67022 119.044 5.09216 118.407 5.09216ZM125.907 11.3379H124.081V8.39802C124.081 7.65919 123.816 7.1553 123.155 7.1553C122.651 7.1553 122.35 7.49519 122.218 7.8233C122.17 7.94071 122.158 8.10482 122.158 8.26904V11.3379H120.331C120.331 11.3379 120.355 6.35811 120.331 5.84255H122.158V6.62064C122.401 6.24619 122.835 5.71358 123.804 5.71358C125.006 5.71358 125.907 6.49899 125.907 8.18687V11.3379Z"
+                            fill="white" />
+                        </a><a xlink:href="https://www.instagram.com/tedxvitpune/">
+                        <path
+                            d="M84.9355 7.5C84.9355 8.29285 84.2928 8.93555 83.5 8.93555C82.7072 8.93555 82.0645 8.29285 82.0645 7.5C82.0645 6.70715 82.7072 6.06445 83.5 6.06445C84.2928 6.06445 84.9355 6.70715 84.9355 7.5Z"
+                            fill="white" />
+                        <path
+                            d="M86.8572 4.96014C86.7882 4.77314 86.6781 4.60388 86.5351 4.46495C86.3961 4.3219 86.227 4.21181 86.0399 4.1428C85.8881 4.08386 85.6602 4.01371 85.2403 3.9946C84.7861 3.97388 84.6499 3.96942 83.5 3.96942C82.35 3.96942 82.2138 3.97377 81.7597 3.99448C81.3398 4.01371 81.1117 4.08386 80.9601 4.1428C80.773 4.21181 80.6037 4.3219 80.4649 4.46495C80.3218 4.60388 80.2117 4.77303 80.1426 4.96014C80.0837 5.11189 80.0135 5.33997 79.9944 5.75985C79.9737 6.21395 79.9692 6.35014 79.9692 7.50015C79.9692 8.65005 79.9737 8.78624 79.9944 9.24046C80.0135 9.66034 80.0837 9.88831 80.1426 10.0401C80.2117 10.2272 80.3217 10.3963 80.4648 10.5352C80.6037 10.6783 80.7728 10.7884 80.96 10.8574C81.1117 10.9164 81.3398 10.9866 81.7597 11.0057C82.2138 11.0264 82.3498 11.0308 83.4999 11.0308C84.65 11.0308 84.7862 11.0264 85.2402 11.0057C85.66 10.9866 85.8881 10.9164 86.0399 10.8574C86.4155 10.7125 86.7123 10.4156 86.8572 10.0401C86.9161 9.88831 86.9863 9.66034 87.0055 9.24046C87.0262 8.78624 87.0306 8.65005 87.0306 7.50015C87.0306 6.35014 87.0262 6.21395 87.0055 5.75985C86.9864 5.33997 86.9163 5.11189 86.8572 4.96014ZM83.5 9.71149C82.2785 9.71149 81.2884 8.72147 81.2884 7.50004C81.2884 6.27861 82.2785 5.28858 83.5 5.28858C84.7213 5.28858 85.7114 6.27861 85.7114 7.50004C85.7114 8.72147 84.7213 9.71149 83.5 9.71149ZM85.7989 5.71796C85.5134 5.71796 85.282 5.48656 85.282 5.20115C85.282 4.91573 85.5134 4.68433 85.7989 4.68433C86.0843 4.68433 86.3157 4.91573 86.3157 5.20115C86.3156 5.48656 86.0843 5.71796 85.7989 5.71796Z"
+                            fill="white" />
+                        <path
+                            d="M83.5 0C79.3585 0 76 3.3585 76 7.5C76 11.6415 79.3585 15 83.5 15C87.6415 15 91 11.6415 91 7.5C91 3.3585 87.6415 0 83.5 0ZM87.7807 9.27555C87.7598 9.734 87.6869 10.047 87.5805 10.321C87.3568 10.8995 86.8995 11.3568 86.321 11.5805C86.0471 11.6869 85.734 11.7597 85.2757 11.7807C84.8164 11.8016 84.6697 11.8066 83.5001 11.8066C82.3304 11.8066 82.1838 11.8016 81.7244 11.7807C81.2661 11.7597 80.953 11.6869 80.6791 11.5805C80.3917 11.4724 80.1314 11.3029 79.9163 11.0837C79.6972 10.8687 79.5278 10.6083 79.4196 10.321C79.3132 10.0471 79.2403 9.734 79.2195 9.27567C79.1983 8.8163 79.1934 8.66959 79.1934 7.5C79.1934 6.33041 79.1983 6.1837 79.2193 5.72445C79.2402 5.266 79.313 4.953 79.4194 4.67903C79.5275 4.39167 79.6971 4.13132 79.9163 3.91628C80.1313 3.69713 80.3917 3.52764 80.679 3.41949C80.953 3.31306 81.266 3.24028 81.7244 3.21934C82.1837 3.19839 82.3304 3.19336 83.5 3.19336C84.6696 3.19336 84.8163 3.19839 85.2756 3.21945C85.734 3.24028 86.047 3.31306 86.321 3.41938C86.6083 3.52753 86.8687 3.69713 87.0838 3.91628C87.3029 4.13143 87.4725 4.39167 87.5805 4.67903C87.687 4.953 87.7598 5.266 87.7808 5.72445C87.8017 6.1837 87.8066 6.33041 87.8066 7.5C87.8066 8.66959 87.8017 8.8163 87.7807 9.27555Z"
+                            fill="white" /></a><a xlink:href="https://www.facebook.com/TEDxVITPune/">
+                        <path
+                            d="M15 7.5C15 3.3585 11.6415 0 7.5 0C3.3585 0 0 3.3585 0 7.5C0 11.6415 3.3585 15 7.5 15C7.54406 15 7.58789 14.9991 7.63184 14.9983V9.15985H6.02051V7.28199H7.63184V5.90012C7.63184 4.29749 8.61019 3.42522 10.0398 3.42522C10.7244 3.42522 11.3128 3.47626 11.4844 3.49903V5.17399H10.4986C9.72084 5.17399 9.57024 5.54363 9.57024 6.08597V7.28199H11.4299L11.1875 9.15985H9.57024V14.7102C12.7051 13.8115 15 10.9234 15 7.5Z"
+                            fill="white" /></a><a xlink:href="https://twitter.com/tedxvitpune">
+                        <path
+                            d="M45.5 0C41.3585 0 38 3.3585 38 7.5C38 11.6415 41.3585 15 45.5 15C49.6415 15 53 11.6415 53 7.5C53 3.3585 49.6415 0 45.5 0ZM48.9244 5.8477C48.9277 5.92152 48.9293 5.99567 48.9293 6.07018C48.9293 8.34492 47.1978 10.968 44.0314 10.9681H44.0315H44.0314C43.0592 10.9681 42.1545 10.6832 41.3927 10.1949C41.5274 10.2108 41.6645 10.2187 41.8033 10.2187C42.6099 10.2187 43.3522 9.94354 43.9414 9.48177C43.1878 9.46781 42.5525 8.97011 42.3332 8.28609C42.4381 8.30624 42.5461 8.31722 42.6567 8.31722C42.8138 8.31722 42.966 8.29605 43.1107 8.25657C42.323 8.09887 41.7296 7.40273 41.7296 6.56914C41.7296 6.56136 41.7296 6.55437 41.7299 6.54716C41.9618 6.67614 42.2271 6.75373 42.5095 6.76243C42.0473 6.45401 41.7435 5.92678 41.7435 5.32951C41.7435 5.01411 41.8287 4.71863 41.9766 4.46423C42.8255 5.50587 44.0942 6.19091 45.5249 6.26289C45.4954 6.13678 45.4802 6.0054 45.4802 5.87036C45.4802 4.92004 46.2512 4.14906 47.2019 4.14906C47.697 4.14906 48.1443 4.35837 48.4584 4.69299C48.8506 4.61563 49.2189 4.47235 49.5516 4.27517C49.4228 4.67697 49.15 5.01411 48.7945 5.22732C49.1428 5.18566 49.4746 5.09331 49.7831 4.95621C49.5527 5.30148 49.2605 5.60474 48.9244 5.8477Z"
+                            fill="white" /></a></svg></div>
+        </div>
+        </div>
+    </footer>
+
+
+    <script>{% block script %} {% endblock %}</script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

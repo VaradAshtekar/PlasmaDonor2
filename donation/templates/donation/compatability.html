@@ -1,0 +1,61 @@
+{% extends 'donation/base.html' %}
+{% block titles %}
+  Eligibility Criteria
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Blood Type</th>
+      <th scope="col">Donate Blood To</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>A+</td>
+      <td>A+ AB+</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>B+</td>
+      <td>B+ AB+</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+       <td>O+</td>
+       <td>O+ A+ B+ AB+</td>
+    </tr>
+  <tr>
+      <th scope="row">3</th>
+      <td>AB+</td>
+      <td>AB+</td>
+    </tr>
+  <tr>
+      <th scope="row">3</th>
+      <td>A-</td>
+      <td>A+ A- AB+ AB-</td>
+    </tr>
+  <tr>
+      <th scope="row">3</th>
+      <td>B-</td>
+      <<td>B+ B- AB+ AB-</td>
+    </tr>
+  <tr>
+      <th scope="row">3</th>
+      <td>O-</td>
+      <td>Everyone</td>
+    </tr>
+  <tr>
+      <th scope="row">3</th>
+      <td>AB-</td>
+      <td>AB+ AB-</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+{% endblock %}

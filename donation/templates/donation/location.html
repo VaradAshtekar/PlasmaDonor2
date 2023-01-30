@@ -1,0 +1,89 @@
+{% extends 'donation/base.html' %}
+{% block titles %}
+  Nearest Centers
+{% endblock %}
+
+{% block css %}
+
+.centers{
+display:flex;
+flex-direction:row;
+}
+
+h2{
+margin-left:30px;
+}
+{% endblock %}
+
+{% block body %}
+
+<h2 class="my-3" xmlns="http://www.w3.org/1999/html">
+        Nearest Blood Donation Centers
+</h2>
+<div class=" container centers">
+
+
+    <div class="state">
+<label for="state">State</label>
+
+                  <select name="state" id="state">
+    <option value="Maharashtra">Maharashtra</option>
+
+  </select>
+<form method="get" action="/donation/location">
+ <label for="city">City</label>
+
+    <select name="city" id="city">
+
+          {% for i in city %}
+
+          <option value={{ i }}>{{ i }}</option>
+
+      {% endfor %}
+
+    </select>
+     <button class="btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+    </div>
+</form>
+    <div class="search mx-3 ">
+    <form class="d-flex" method="get">
+      <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+    </div>
+</div>
+
+    <div class="container my-3">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name of Center</th>
+      <th scope="col">Address</th>
+              <th scope="col">Availability</th>
+
+        <th scope="col">Register</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      {% for i,j,z in bank_info %}
+
+   <tr>
+      <th scope="row">{{z}}</th>
+      <td>{{ i }}</td>
+       <td>{{ j }}</td>
+       <td>  </td>
+       <td>Register</td>
+    </tr>
+
+      {% endfor %}
+
+  </tbody>
+</table>
+    </div>
+</div>
+
+
+{% endblock %}
